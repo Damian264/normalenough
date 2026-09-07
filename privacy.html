@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Normal Enough</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+    color: #1a1a1a;
+    background: #fdfdfc;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #16181a; }
+    a { color: #7fb3ff; }
+    code { background: #23262a; }
+  }
+  h1 { font-size: 1.75rem; letter-spacing: -0.02em; margin: 0 0 .25rem; }
+  .updated { color: #666; margin: 0 0 2.5rem; font-size: .95rem; }
+  @media (prefers-color-scheme: dark) { .updated { color: #9a9a9a; } }
+  h2 { font-size: 1.1rem; margin: 2.25rem 0 .6rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .4rem 0; }
+  code {
+    background: #f0f0ee; padding: .15em .4em; border-radius: 3px;
+    font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(128,128,128,.3);
+    font-size: .9rem; color: #666;
+  }
+  @media (prefers-color-scheme: dark) { footer { color: #9a9a9a; } }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Normal Enough · last updated 7 September 2026</p>
+
+<h2>Summary</h2>
+<p>
+  Normal Enough is a personal tool operated by one person, for one YouTube
+  channel. <strong>It has no users other than its operator.</strong> It does not
+  collect, store, process or share personal data belonging to anyone else, and
+  it has no mechanism by which anyone else could sign in or submit data.
+</p>
+
+<h2>Google user data the application accesses</h2>
+<p>
+  The application requests access to the operator's own Google Account through
+  Google OAuth 2.0, using these scopes and no others:
+</p>
+<ul>
+  <li>
+    <code>https://www.googleapis.com/auth/youtube.upload</code> — used solely to
+    upload finished video files, together with their title, description, tags,
+    category and privacy status, to the operator's own YouTube channel.
+  </li>
+  <li>
+    <code>https://www.googleapis.com/auth/youtube.readonly</code> — used solely
+    to read the authorised channel's identifier, title and handle, in order to
+    verify that an upload is going to the intended channel. This is a safety
+    check: it prevents the application from publishing to a different account
+    that may have been selected by mistake during authorisation.
+  </li>
+</ul>
+
+<h2>How that data is used</h2>
+<p>
+  The channel identifier, title and handle are read at the moment of an upload,
+  compared against the expected channel, and then discarded. They are not stored
+  beyond the current run, except for the channel name and identifier, which are
+  written once into a local credentials file so the operator can see which
+  channel was authorised.
+</p>
+<p>
+  The videos and their metadata are created by the application itself. They do
+  not contain personal data.
+</p>
+
+<h2>How that data is stored</h2>
+<ul>
+  <li>
+    The OAuth refresh token is stored in a single file on the operator's own
+    server, readable only by the operator's user account. It is never
+    transmitted anywhere except to Google's own token endpoint, in order to
+    obtain the short-lived access tokens needed for an upload.
+  </li>
+  <li>
+    No database exists. No analytics, tracking, advertising or profiling of any
+    kind is performed.
+  </li>
+  <li>
+    No Google user data is stored on any third-party service.
+  </li>
+</ul>
+
+<h2>Sharing</h2>
+<p>
+  Google user data is <strong>never</strong> shared, sold, transferred or
+  disclosed to any third party. It is not used to train any model. It is not
+  used for advertising. There is no third party involved: the data travels only
+  between the operator's own server and Google.
+</p>
+
+<h2>Retention and deletion</h2>
+<p>
+  The refresh token is kept only for as long as the channel is in operation, and
+  is deleted when the application stops being used. The operator can revoke the
+  application's access at any time from
+  <a href="https://myaccount.google.com/permissions">Google Account permissions</a>,
+  which immediately and permanently invalidates the stored token.
+</p>
+<p>
+  To request deletion of any data, contact the address below. In practice there
+  is nothing to delete other than the operator's own token.
+</p>
+
+<h2>Limited Use</h2>
+<p>
+  Normal Enough's use and transfer of information received from Google APIs
+  adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google
+  API Services User Data Policy</a>, including the Limited Use requirements.
+</p>
+
+<h2>Children</h2>
+<p>
+  The application is not directed to children and does not knowingly process any
+  data concerning children. The videos it publishes are declared as not made for
+  kids.
+</p>
+
+<h2>Changes</h2>
+<p>
+  If this policy changes, the updated version will be published on this page with
+  a new date.
+</p>
+
+<footer>
+  <p>
+    <a href="./index.html">Home</a> ·
+    <a href="./terms.html">Terms of service</a>
+  </p>
+  <p>Contact: <a href="mailto:normalenough26@gmail.com">normalenough26@gmail.com</a></p>
+</footer>
+
+</body>
+</html>

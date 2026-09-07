@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Normal Enough</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+    color: #1a1a1a;
+    background: #fdfdfc;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #16181a; }
+    a { color: #7fb3ff; }
+    code { background: #23262a; }
+  }
+  h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin: 0 0 .25rem; }
+  .tagline { color: #666; margin: 0 0 2.5rem; }
+  @media (prefers-color-scheme: dark) { .tagline { color: #9a9a9a; } }
+  h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  code {
+    background: #f0f0ee; padding: .15em .4em; border-radius: 3px;
+    font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(128,128,128,.3);
+    font-size: .9rem; color: #666;
+  }
+  @media (prefers-color-scheme: dark) { footer { color: #9a9a9a; } }
+</style>
+</head>
+<body>
+
+<h1>Normal Enough</h1>
+<p class="tagline">A small tool that publishes an animated YouTube channel.</p>
+
+<h2>What this is</h2>
+<p>
+  <strong>Normal Enough</strong> is a personal, single-operator project. It is a
+  program that produces short animated videos — simple stick-figure animation,
+  a narrated voice track and word-by-word subtitles — and uploads them to one
+  YouTube channel:
+  <a href="https://www.youtube.com/@itsnormalenough">@itsnormalenough</a>.
+</p>
+<p>
+  The videos are short comedic stories about ordinary adult life: work, meetings,
+  commutes, the small absurdities of a normal week. The scripts are written by a
+  person. The program handles everything after that: it plans the scenes, renders
+  the animation, generates the narration, writes the title and description, and
+  publishes the result.
+</p>
+
+<h2>What the application does with Google APIs</h2>
+<p>
+  The application uses the YouTube Data API v3 for exactly two things, both on
+  the operator's own channel:
+</p>
+<ul>
+  <li>
+    <strong>Uploading a finished video</strong> to the channel, with its title,
+    description, tags, category and privacy setting.
+    (<code>youtube.upload</code>)
+  </li>
+  <li>
+    <strong>Reading the authorised channel's name and handle</strong>, to confirm
+    that the upload is going to the intended channel and not to another account
+    that happens to be signed in.
+    (<code>youtube.readonly</code>)
+  </li>
+</ul>
+<p>
+  It does not read, modify or delete existing videos. It does not access any
+  channel other than the one that authorised it. It has no users other than the
+  operator, and no sign-in of any kind for anyone else.
+</p>
+
+<h2>Who it is for</h2>
+<p>
+  Nobody but its author. This is not a product, a service or an app that other
+  people install. It runs on one server and publishes to one channel. This page
+  exists because Google requires a public home page for applications that request
+  access to the YouTube API.
+</p>
+
+<footer>
+  <p>
+    <a href="./privacy.html">Privacy policy</a> ·
+    <a href="./terms.html">Terms of service</a> ·
+    <a href="https://www.youtube.com/@itsnormalenough">The channel</a>
+  </p>
+  <p>Contact: <a href="mailto:normalenough26@gmail.com">normalenough26@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
