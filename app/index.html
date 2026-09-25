@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!--
+    Politica di sicurezza (SPEC-app.md, "Mai"): la pagina carica solo se stessa
+    e parla solo con api.github.com. E' la difesa principale della chiave
+    GitHub salvata sul telefono: nessuno script estraneo puo' girare qui.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src https://api.github.com; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#070B14">
+  <title>Normal Enough</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>L'app di controllo ha bisogno di JavaScript.</noscript>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
