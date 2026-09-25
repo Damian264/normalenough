@@ -290,3 +290,155 @@ button.stato { font: inherit; font-size: 13px; font-weight: 550; cursor: pointer
 /* La chiave si digita come un testo, ma si vede come una password: cosi' il
    gestore password del browser non la riempie e non la salva (main.tsx). */
 .segreto { -webkit-text-security: disc; text-security: disc; }
+
+/* --- fase 2: coda, pausa, avvisi ------------------------------------------ */
+
+/* Quando il valore grande e' una parola ("In pausa", "Coda vuota") e non un
+   orario, si rimpicciolisce: resta il pezzo forte senza uscire dalla card. */
+.hero .quando[data-lungo="true"] { font-size: clamp(38px, 11vw, 56px); letter-spacing: -0.03em; }
+
+.card h3 {
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nebbia);
+}
+
+.conta {
+  margin-left: 6px;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--nebbia);
+}
+
+.elenco {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.riga {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 6px 6px 6px 12px;
+  border-radius: var(--r-elem);
+  background: rgba(7, 11, 20, 0.45);
+}
+
+.riga .id {
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  color: var(--bagliore);
+}
+
+.riga-testo {
+  min-width: 0;
+  display: grid;
+  font-size: 14px;
+}
+
+.riga-testo small { color: var(--nebbia); font-size: 12px; }
+
+.errore .id { color: var(--brace); }
+.errore .messaggio {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.azioni { display: flex; gap: 4px; }
+
+.mini {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid var(--vetro-bordo);
+  background: rgba(140, 170, 255, 0.06);
+  color: var(--inchiostro);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mini:disabled { opacity: 0.35; cursor: default; }
+
+.pulsanti { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+
+.bottone[data-tono="brace"] {
+  border-color: rgba(255, 138, 61, 0.5);
+  background: rgba(255, 138, 61, 0.14);
+}
+
+.bottone.secondario {
+  border-color: var(--vetro-bordo);
+  background: rgba(140, 170, 255, 0.06);
+}
+
+.nota.piccola { margin-top: 12px; font-size: 12.5px; }
+.nota a, .piede a { color: var(--bagliore); }
+
+.avviso {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--r-elem);
+  font-size: 14px;
+  border: 1px solid var(--vetro-bordo);
+  background: var(--vetro);
+}
+
+.avviso[data-tono="ok"] { border-color: rgba(91, 214, 160, 0.4); color: var(--ok); }
+.avviso[data-tono="errore"] { border-color: rgba(255, 93, 108, 0.45); color: var(--errore); }
+
+.piede {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+  color: var(--nebbia);
+  font-size: 12.5px;
+}
+
+/* La riga della coda si tocca per mostrare le sue azioni (cards.tsx). */
+.riga-coda { display: grid; gap: 6px; }
+
+.riga-tocca {
+  appearance: none;
+  width: 100%;
+  border: 1px solid transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.riga-coda[data-aperta="true"] .riga-tocca { border-color: rgba(76, 141, 255, 0.45); }
+
+.posizione {
+  padding-right: 8px;
+  font-size: 12px;
+  color: var(--nebbia);
+  font-variant-numeric: tabular-nums;
+}
+
+.azioni.aperte {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.mini.pericolo { border-color: rgba(255, 93, 108, 0.45); color: var(--errore); }
