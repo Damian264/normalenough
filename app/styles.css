@@ -490,3 +490,25 @@ button.stato { font: inherit; font-size: 13px; font-weight: 550; cursor: pointer
 }
 
 .mini.tutta { width: 100%; margin-top: 8px; }
+
+/* --- credito (T10) --- */
+.quanto {
+  margin: 4px 0 2px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.quanto small {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--nebbia);
+}
+.quanto[data-tono="errore"],
+.dati li[data-tono="errore"] { color: var(--errore); }
+.dati li {
+  font-size: 14px;
+  color: var(--nebbia);
+  font-variant-numeric: tabular-nums;
+}
